@@ -4,10 +4,6 @@ public class MonotoneFinderII {
 
     public static void main(String[] args) {
         System.out.println("Hari Bol");
-        //int[] arrayOfInt = {1, 4, 6, 7};
-        //int[] arrayOfInt = {-1, -4, -6, -7};
-        //int[] arrayOfInt = {-1};
-        //int[] arrayOfInt = {1, 4, 6, 7, 1};
         int[] arrayOfInt = {1, 1, 1, 1, 1};
 
         Arrays.stream(arrayOfInt).forEach(i -> System.out.print(i + " "));
@@ -28,7 +24,7 @@ public class MonotoneFinderII {
                     finallyItIs = "It is not monotonic";
                     break;
                 }
-            }else if (first == last) {
+            } else if (first == last) {
                 if (arrayOfInt[i + 1] != arrayOfInt[i]) {
                     finallyItIs = "It is not monotonic";
                     break;
@@ -36,6 +32,6 @@ public class MonotoneFinderII {
             }
         }
 
-        System.out.println("->"+finallyItIs);
+        System.out.println("->" + finallyItIs);
     }
 }

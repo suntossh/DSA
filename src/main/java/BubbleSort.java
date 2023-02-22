@@ -11,18 +11,21 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        Arrays.stream(unsortedArray).forEach(value -> System.out.print(value+" , "));
+        Arrays.stream(unsortedArray).forEach(value -> System.out.print(value + " , "));
         boolean isSwapCalled = true;
+        int counter = 0;// since every while loop iteration is causing largest number to be switched to extreme right
+        // so we need not loop for no reason till end of array all time.
         while (isSwapCalled) {
             isSwapCalled = false;
-            for (int i = 0; i < unsortedArray.length-1; i++) {
+            for (int i = 0; i < unsortedArray.length - 1 - counter; i++) {
                 if (unsortedArray[i] > unsortedArray[i + 1]) {
                     swap(i);
                     isSwapCalled = true;
                 }
             }
+            counter++;
         }
         System.out.println("Sorted Array");
-        Arrays.stream(unsortedArray).forEach(value -> System.out.print(value+" , "));
+        Arrays.stream(unsortedArray).forEach(value -> System.out.print(value + " , "));
     }
 }
